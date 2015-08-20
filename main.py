@@ -4,10 +4,10 @@ import nltk
 
 coll = mongoconn.getCollection("tweets")
 
-txt = list(coll.find())[3]['text']
+allTweets = list(coll.find())
 
-tokens = nltk.word_tokenize(txt)
-tagged = nltk.pos_tag(tokens)
-print txt
-print tagged
+def getDataSet():
+
+    out = [x['text'] for x in allTweets]
+    return out
 

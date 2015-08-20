@@ -4,10 +4,82 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+Clusterer	clusterer.py	/^class Clusterer():$/;"	c
 DB_NAME	config.py	/^DB_NAME = "disastertweet_development"$/;"	v
+FeatureMapper	featureMappers.py	/^class FeatureMapper():$/;"	c
+HashingVectorizer	scikitt.py	/^from sklearn.feature_extraction.text import HashingVectorizer$/;"	i
+KMeans	scikitt.py	/^from sklearn.cluster import KMeans, MiniBatchKMeans$/;"	i
+K_Means	clusterer.py	/^class K_Means(Clusterer):$/;"	c
+MiniBatchKMeans	scikitt.py	/^from sklearn.cluster import KMeans, MiniBatchKMeans$/;"	i
 MongoClient	mongoconn.py	/^from pymongo import MongoClient$/;"	i
+Normalizer	scikitt.py	/^from sklearn.preprocessing import Normalizer$/;"	i
+OptionParser	scikitt.py	/^from optparse import OptionParser$/;"	i
+SVM	trainer.py	/^class SVM(Trainer):$/;"	c
+TagSequence	featureMappers.py	/^class TagSequence(FeatureMapper):$/;"	c
+TfidfTransformer	scikitt.py	/^from sklearn.feature_extraction.text import TfidfTransformer$/;"	i
+TfidfVectorizer	scikitt.py	/^from sklearn.feature_extraction.text import TfidfVectorizer$/;"	i
+Trainer	trainer.py	/^class Trainer():$/;"	c
+TruncatedSVD	scikitt.py	/^from sklearn.decomposition import TruncatedSVD$/;"	i
+X	scikitt.py	/^    X = lsa.fit_transform(X)$/;"	v
+X	scikitt.py	/^X = vectorizer.fit_transform(dataset.data)$/;"	v
+binary	scikitt.py	/^                                       binary=False)$/;"	v
+categories	scikitt.py	/^categories = [$/;"	v
+cluster	clusterer.py	/^    def cluster(X, k):$/;"	m	class:K_Means
 coll	main.py	/^coll = mongoconn.getCollection("tweets")$/;"	v
+combineFeatures	featureMappers.py	/^    def combineFeatures(featureMapArray):$/;"	m	class:FeatureMapper
 config	main.py	/^import config$/;"	i
 config	mongoconn.py	/^import config$/;"	i
+dataset	scikitt.py	/^dataset = fetch_20newsgroups(subset='all', categories=categories,$/;"	v
+explained_variance	scikitt.py	/^    explained_variance = svd.explained_variance_ratio_.sum()$/;"	v
+fetch_20newsgroups	scikitt.py	/^from sklearn.datasets import fetch_20newsgroups$/;"	i
+format	scikitt.py	/^                    format='%(asctime)s %(levelname)s %(message)s')$/;"	v
 getCollection	mongoconn.py	/^def getCollection(name):$/;"	f
+getFeatureVector	featureMappers.py	/^    def getFeatureVector(self,string):$/;"	m	class:TagSequence
+getTags	featureMappers.py	/^    def getTags(self, string):$/;"	m	class:FeatureMapper
+getTokens	featureMappers.py	/^    def getTokens(self, string):$/;"	m	class:FeatureMapper
+hasher	scikitt.py	/^        hasher = HashingVectorizer(n_features=opts.n_features,$/;"	v
+help	scikitt.py	/^              help="Disable Inverse Document Frequency feature weighting.")$/;"	v
+help	scikitt.py	/^              help="Maximum number of features (dimensions)"$/;"	v
+help	scikitt.py	/^              help="Preprocess documents with latent semantic analysis.")$/;"	v
+help	scikitt.py	/^              help="Print progress reports inside k-means algorithm.")$/;"	v
+help	scikitt.py	/^              help="Use a hashing feature vectorizer")$/;"	v
+help	scikitt.py	/^              help="Use ordinary k-means algorithm (in batch mode).")$/;"	v
+km	scikitt.py	/^    km = KMeans(n_clusters=true_k, init='k-means++', max_iter=100, n_init=1,$/;"	v
+km	scikitt.py	/^    km = MiniBatchKMeans(n_clusters=true_k, init='k-means++', n_init=1,$/;"	v
+labels	scikitt.py	/^labels = dataset.target$/;"	v
+logging	scikitt.py	/^import logging$/;"	i
+lsa	scikitt.py	/^    lsa = make_pipeline(svd, Normalizer(copy=False))$/;"	v
+make_pipeline	scikitt.py	/^from sklearn.pipeline import make_pipeline$/;"	i
+metrics	scikitt.py	/^from sklearn import metrics$/;"	i
 mongoconn	main.py	/^import mongoconn$/;"	i
+nltk	featureMappers.py	/^import nltk$/;"	i
+nltk	main.py	/^import nltk$/;"	i
+np	scikitt.py	/^import numpy as np$/;"	i
+op	scikitt.py	/^op = OptionParser()$/;"	v
+order_centroids	scikitt.py	/^    order_centroids = km.cluster_centers_.argsort()[:, ::-1]$/;"	v
+print_function	scikitt.py	/^from __future__ import print_function$/;"	i
+pytest	clusterer_test.py	/^import pytest$/;"	i
+pytest	featureMappers_test.py	/^import pytest$/;"	i
+pytest	trainer_test.py	/^import pytest$/;"	i
+stop_words	scikitt.py	/^                                       stop_words='english',$/;"	v
+svd	scikitt.py	/^    svd = TruncatedSVD(opts.n_components)$/;"	v
+sys	scikitt.py	/^import sys$/;"	i
+t0	scikitt.py	/^    t0 = time()$/;"	v
+t0	scikitt.py	/^t0 = time()$/;"	v
+tagged	main.py	/^tagged = nltk.pos_tag(tokens)$/;"	v
+terms	scikitt.py	/^    terms = vectorizer.get_feature_names()$/;"	v
+test_featureMap	featureMappers_test.py	/^def test_featureMap():$/;"	f
+test_featureVector_length_of_two_strings_be_same	featureMappers_test.py	/^def test_featureVector_length_of_two_strings_be_same():$/;"	f
+test_kmeans_clustering	clusterer_test.py	/^def test_kmeans_clustering():$/;"	f
+test_trainer_generates_a_model	trainer_test.py	/^def test_trainer_generates_a_model():$/;"	f
+time	scikitt.py	/^from time import time$/;"	i
+tokens	main.py	/^tokens = nltk.word_tokenize(txt)$/;"	v
+train	trainer.py	/^    def train(self,X):$/;"	m	class:SVM
+true_k	scikitt.py	/^true_k = np.unique(labels).shape[0]$/;"	v
+tweet_str	featureMappers_test.py	/^tweet_str = "may god help the families of the victims of the #gurdaspurattack ."$/;"	v
+txt	main.py	/^txt = list(coll.find())[3]['text']$/;"	v
+use_idf	scikitt.py	/^                                 use_idf=opts.use_idf)$/;"	v
+vectorizer	scikitt.py	/^        vectorizer = HashingVectorizer(n_features=opts.n_features,$/;"	v
+vectorizer	scikitt.py	/^        vectorizer = make_pipeline(hasher, TfidfTransformer())$/;"	v
+vectorizer	scikitt.py	/^    vectorizer = TfidfVectorizer(max_df=0.5, max_features=opts.n_features,$/;"	v
+verbose	scikitt.py	/^                verbose=opts.verbose)$/;"	v

@@ -3,6 +3,7 @@ from featureMappers import *
 
 tweet_str = "may god help the families of the victims of the #gurdaspurattack ."
 
+@pytest.mark.skipif("True")
 def test_featureMap():
 
     t = TagSequence()
@@ -23,4 +24,14 @@ def test_featureVector_length_of_two_strings_be_same():
     v2 = t.getFeatureVector(str2)
 
     assert len(v1) == len(v2)
+
+import main
+
+def test_tifd_vector():
+    
+    data = main.getDataSet()#['My name is Rohan', 'My name is Sachin', 'rohan']
+    t = TifdVector();
+    print t.getFeatureVector_fromset(data)
+
+
 
